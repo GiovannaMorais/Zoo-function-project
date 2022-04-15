@@ -51,12 +51,13 @@ const getLocation = (value) => {
 const objAllFuncionarios = () =>
   data.employees.map((valueInfo) => {
     const funcinarioInfo = {
-      id: valueInfo.id,
-      fullName: `${valueInfo.firstName} ${valueInfo.lastName}`,
+      id: acharPeloId(valueInfo),
+      fullName: acharPeloNomeOuSobrenome(valueInfo),
       species: getSpecies(valueInfo),
       locations: getLocation(valueInfo),
     };
     return funcinarioInfo;
+    // console.log(funcinarioInfo);
   });
 const objFuncionario = (valueInfo) => ({
   id: acharPeloId(valueInfo),
