@@ -31,18 +31,18 @@ const localização = () => {
 // Função animalsMesmoSex com dois parametros genre e specie
 // chamei o residents pelo segundo parametro para puxar as especies existentes
 // na propriedade residents(onde está todos os animais da mesma especie)
-// fiz o reduce para abstrair o sex dos animais
+// fiz o reduce para abstrair o 'sex' dos animais
 // se tivesse o mesmo 'sex' que o animal que eu estava comparando pelo reduce
 // eu 'puxava/add' no acumulador (acc) o nome desse animal do 'sex' especificado.
 // retornando somente os nomes de animais macho/fêmea.
-// caso contrario se n tivesse um 'sex' definido eu 'puxava/add' no acumulador (acc) o nome desse animal.
+// caso contrario se n tivesse um 'sex' definido eu 'puxava/add' no acumulador (acc) o nome do animal.
 
 const animalsMesmoSex = (genre, specie) =>
   specie.residents.reduce((acc, animal) => {
     if (genre.sex === animal.sex) {
       acc.push(animal.name);
     }
-    if (!genre.sex) {
+    if (genre.sex === undefined) {
       acc.push(animal.name);
     }
     return acc;
